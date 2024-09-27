@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Recommendations</title>
+    <link rel="stylesheet" href="/styleForR.css">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <%- include("includes/header.ejs"); %>  
+    
+    <div class="container">
+        <h1>Explore Our Book Recommendations</h1>
+        <div class="book-category">
+            <div class="category-header" onclick="toggleBooks('thriller')">Thriller & Suspense</div>
+            <div class="book-list" id="thriller">
+                <ul>
+                    <li>The Silent Patient</li>
+                    <li>Gone Girl</li>
+                    <li>The Girl with the Dragon Tattoo</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="book-category">
+            <div class="category-header" onclick="toggleBooks('biographies')">Biographies</div>
+            <div class="book-list" id="biographies">
+                <ul>
+                    <li>Steve Jobs by Walter Isaacson</li>
+                    <li>Becoming by Michelle Obama</li>
+                    <li>The Diary of a Young Girl by Anne Frank</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="book-category">
+            <div class="category-header" onclick="toggleBooks('self-help')">Self-Help</div>
+            <div class="book-list" id="self-help">
+                <ul>
+                    <li>The Power of Habit</li>
+                    <li>Atomic Habits</li>
+                    <li>Think and Grow Rich</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="book-category">
+            <div class="category-header" onclick="toggleBooks('dark-fantasy')">Dark Fantasy</div>
+            <div class="book-list" id="dark-fantasy">
+                <ul>
+                    <li>A Song of Ice and Fire</li>
+                    <li>The Night Circus</li>
+                    <li>The Name of the Wind</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleBooks(id) {
+            const element = document.getElementById(id);
+            element.classList.toggle('show');
+        }
+    </script>
+    <%- include("includes/footer.ejs"); %>  
+</body>
+</html>

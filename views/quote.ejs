@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote of the Day</title>
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-image: url("https://www.istockphoto.com/photo/christmas-snowflakes-on-red-background-gm1049681110-280715783?utm_campaign=srp_photos_top&utm_content=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fbackground-image&utm_medium=affiliate&utm_source=unsplash&utm_term=background+image%3A%3Areduced-affiliates%3Aquarter");
+            /* height: 100vh; */
+        }
+
+        
+        h1 {
+            margin-bottom: 20px;
+            margin-top: 20px;
+            font-size: 3rem;
+            color: #333;
+        }
+
+        
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: end;
+            background-color: #fff;
+            padding: 4rem;
+            border-radius: 8px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+             margin-bottom: 20px; 
+        } 
+
+        
+        .quote {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+      
+        .author {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: #777;
+        }
+
+       
+        button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="#">GetInspired</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/quote/about">About</a></li>
+                <li><a href="/quote">Quote of the Day</a></li>
+                <li><a href="/quote/books">Book Recommendation</a></li>
+            </ul>
+            <div class="hamburger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </nav>
+    </header>
+
+   
+    <h1>
+        <%= "Quote just for you !!" %> &hearts;
+    </h1>
+
+    
+    <div class="container">
+        <h3 class="quote"><%=randomQuote.text %></h3>
+        <p class="author"><b> Author -</b><%= randomQuote.author %></p>
+    </div>
+
+    
+    <button onclick="getNewQuote()">Generate New Quote</button>
+    <!-- <script>
+        async function getNewQuote() {
+          try {
+            console.log("button was clicked");
+            const response = await fetch('/app');
+            const data = await response.json();
+            document.getElementsByClassName('quote').innerText = data.quote;
+            document.getElementsByClassName('author').innerText = '- ' + data.author;
+          } catch (error) {
+            console.error('Error fetching quote:', error);
+          }
+        }
+      </script>
+      <script src="/public/app.js"></script> -->
+</body>
+</html>
+
+
+
